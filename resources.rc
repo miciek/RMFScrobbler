@@ -1,0 +1,200 @@
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Polish resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PLK)
+#ifdef _WIN32
+LANGUAGE LANG_POLISH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041504b0"
+        BEGIN
+            VALUE "CompanyName", "Micha≥ P≥achta"
+            VALUE "FileDescription", "Miasto Muzyki - wtyczka do Last.fm"
+            VALUE "FileVersion", "1, 0"
+            VALUE "InternalName", "MiastoMuzyki"
+            VALUE "LegalCopyright", "Copyright (C) 2008 Micha≥ P≥achta"
+            VALUE "OriginalFilename", "MiastoMuzyki.exe"
+            VALUE "ProductName", "Miasto Muzyki - wtyczka do Last.fm"
+            VALUE "ProductVersion", "1, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x415, 1200
+    END
+END
+
+#endif    // Polish resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 22, 17, 205, 76
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+CAPTION "O wtyczce"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    ICON            IDI_MMICON,IDC_MYICON,11,22,21,20
+    LTEXT           "Wtyczka umoøliwia scrobblowanie muzyki s≥uchanej w Mieúcie Muzyki.\n\nAutor: Micha≥ ""micio"" P≥achta",IDC_STATIC,49,6,119,40,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,169,6,30,13,WS_GROUP
+    LTEXT           "http://www.last.fm/user/micio/journal",IDC_STATIC_JOURNAL,49,39,122,8
+    LTEXT           "Aby dzia≥a≥o, zainstaluj klienta Last.fm!",IDC_STATIC_INSTALL_LASTFM,49,57,126,8
+END
+
+IDD_DLG_DIALOG DIALOGEX 0, 0, 188, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Miasto Muzyki - wtyczka do Last.fm"
+FONT 8, "Microsoft Sans Serif", 400, 0, 0xEE
+BEGIN
+    DEFPUSHBUTTON   "Schowaj mnie!",IDOK,7,30,83,21
+    LTEXT           "Wtyczka dzia≥a poprawnie.",IDC_STATIC_OK,7,7,174,10,SS_NOPREFIX
+    LTEXT           "Odwiedü www.miastomuzyki.pl!",IDC_STATIC_MMLINK,7,18,100,10,SS_NOPREFIX
+    LTEXT           "Nie znaleziono radia.",IDC_STATIC_NOTFOUND,7,7,174,10,SS_NOPREFIX
+    PUSHBUTTON      "O wtyczce...",IDB_ONABOUT,99,30,82,21
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 65
+    END
+
+    IDD_DLG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MMICON              ICON                    "miasto_muzyki.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_STEALTHDIALOG ACCELERATORS 
+BEGIN
+    VK_F1,          IDM_ABOUT,              VIRTKEY, NOINVERT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

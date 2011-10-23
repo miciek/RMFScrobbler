@@ -2,3 +2,5 @@ Debug/
 Release/
 _UpgradeReport_Files/
 *.ncb
+*.log
+*.user

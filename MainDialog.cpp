@@ -111,30 +111,24 @@ DWORD WINAPI MiastoMuzykiScrobble(LPVOID iValue)
             }
 
             rmf_title = tt;
-            // the rmf_title syntax: RMF something - Artist: Title - Browser Name
-            //logFile << "MiastoMuzyki title changed: " << rmf_title << endl;            
+            // the rmf_title syntax: Artist: Title :: RMF %name% :: RMFon [- Browser Name]
+            //logFile << "RMFScrobbler title changed: " << WStringToString(rmf_title) << endl;            
 
-            temp = rmf_title.find(L" - "); // get rid of "RMF something - "
+			temp = rmf_title.find(L" :: "); // get rid of " :: RMF %name% ... "
             if(temp != string::npos)
             {
-                tt = rmf_title.substr(temp+3); // tt starts with "Artist"
+                tt = rmf_title.substr(0, temp); // tt starts with "Artist"
                 temp = tt.find(L": "); // get the artist
                 if(temp != string::npos)
                 {
                     artist = tt.substr(0, temp);
-                    tt = tt.substr(temp+2); // get rid of "Artist", tt starts with "Title"       
-
-                    while((temp = artist.find(L" - ")) != string::npos)
-                        artist = artist.substr(temp+3);
-                    //logFile << "artist: " << artist <<  endl;
-                                 
-                    temp = tt.find(L" - ");  // get the title
-                    if(temp != string::npos)
-                    {
-                        //logFile << "title: " << tt.substr(0, temp) << endl;
-                        lastfm.Start(WStringToString(artist), WStringToString(tt.substr(0, temp)), "", "", 200, "");
-                        playing = true;
-                    }
+                    tt = tt.substr(temp+2); // get rid of "Artist", tt is "Title"       
+                    //logFile << "artist: " <<  WStringToString(artist) <<  endl;
+					if(tt.size() > 0) {
+						//logFile << "title: " <<  WStringToString(tt) << endl;
+						lastfm.Start(WStringToString(artist), WStringToString(tt), "", "", 200, "");
+						playing = true;
+					}
                 }
             }            
         }
@@ -272,7 +266,7 @@ void ShowContextMenu(HWND hWnd)
 			InsertMenu(hMenu, -1, MF_BYPOSITION, SWM_HIDE, _T("Schowaj"));
 		else
 			InsertMenu(hMenu, -1, MF_BYPOSITION, SWM_SHOW, _T("Poka¿"));
-        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, _T("O niniejszej wtyczce..."));
+        InsertMenu(hMenu, -1, MF_BYPOSITION, IDM_ABOUT, _T("O niniejszym programiku..."));
 		InsertMenu(hMenu, -1, MF_BYPOSITION, SWM_EXIT, _T("WyjdŸ"));
 
 		// note:	must set window to the foreground or the
@@ -375,7 +369,7 @@ INT_PTR CALLBACK DlgProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case IDC_STATIC_MMLINK:
 			{
 				ShellExecute(hWnd, L"open",
-					L"http://www.miastomuzyki.pl/",
+					L"http://www.rmfon.pl/",
 					NULL, NULL, SW_SHOWNORMAL);
 				return TRUE;
 			}; break;

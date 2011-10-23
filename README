@@ -1,1 +1,7 @@
-Scrobble your music from MiastoMuzyki.pl or RMFOn.pl to Last.fm
+Scrobble your music from RMFOn.pl to Last.fm.
+
+Published under MIT License. 
+
+This software uses some 3rd party software:
+- Last.fm (Copyright 2005-2007, published under GNU GPL)
+- Hyperlinks (Copyright 2002 Neal Stublen)
